@@ -68,22 +68,23 @@ class Calculator:
         """
         if model not in self.models:
             raise ValueError("Unsupported model.")
-
+        
+        output = {}
         tokenizer = self.get_tokenizer(model)
-        nombre_tokens_inputs = len(tokenizer.encode(input_text))
-        nombre_tokens_outputs = len(tokenizer.encode(output_text))
+        output["count_token_input"] = len(tokenizer.encode(input_text))
+        output["count_token_output"] = len(tokenizer.encode(output_text))
 
-        cout_input = nombre_tokens_inputs / 1000 * self.models[model]["input_price"]
-        cout_output = nombre_tokens_outputs / 1000 * self.models[model]["output_price"]
-        cout_total = cout_input + cout_output
+        output["cost_token_input"] = output["count_token_input"] / 1000 * self.models[model]["input_price"]
+        output["cost_token_output"] = output["count_token_output"] / 1000 * self.models[model]["output_price"]
+        output["total_cost"] = output["cost_token_input"] + output["cost_token_output"]
 
-        rapport = (f"Input cost: {cout_input}$ ({nombre_tokens_inputs} tokens). "
-                   f"Output cost: {cout_output}$ ({nombre_tokens_outputs} tokens). "
-                   f"Total cost: {cout_total:.3f}$ (rounded). "
+        rapport = (f"Input cost: {output["cost_token_input"]:.3f}$ (rounded) ({output["count_token_input"]} tokens). "
+                   f"Output cost: {output["cost_token_output"]:.3f}$ (rounded) ({output["count_token_output"]} tokens). "
+                   f"Total cost: {output["total_cost"]:.3f}$ (rounded). (rounded) "
                    "Please note that these costs are estimates and may vary depending on the actual response from OpenAi API.")
 
         if not output_text:
             rapport += (" Warning: No output example provided. "
                         "The actual cost could be higher due to the output tokens not included in this estimate.\n")
-
-        return rapport
+        print(rapport)
+        return output
