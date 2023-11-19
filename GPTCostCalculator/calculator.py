@@ -59,9 +59,10 @@ class Calculator:
             model (str): The GPT model to use for estimation.
             input_text (str): The input text.
             output_text (str): The output text (optional).
+            info_text (bool): Choose to print or not a str report (optional)
 
         Returns:
-            A string report detailing the estimated costs.
+            A dict detailing the estimated costs.
 
         Raises:
             ValueError: If the model is not supported.
