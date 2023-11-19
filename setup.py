@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='GPTCostCalculator',
-    version='0.1.1',
+    version='1.0',
     packages=find_packages(),
     install_requires=[
         'tiktoken',  # Ajoutez ici toutes les dépendances nécessaires
