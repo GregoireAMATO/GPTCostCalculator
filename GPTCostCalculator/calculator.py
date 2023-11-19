@@ -51,7 +51,7 @@ class Calculator:
                 raise
         return self.tokenizers[model]
 
-    def cost_estimate(self, model: str, input_text: str, output_text: str = "") -> str:
+    def cost_estimate(self, model: str, input_text: str, output_text: str = "", info_text = False) -> str:
         """
         Estimates the cost for a given input and output text using a specified GPT model.
 
@@ -78,13 +78,14 @@ class Calculator:
         output["cost_token_output"] = output["count_token_output"] / 1000 * self.models[model]["output_price"]
         output["total_cost"] = output["cost_token_input"] + output["cost_token_output"]
 
-        rapport = (f"Input cost: {output["cost_token_input"]:.3f}$ (rounded) ({output["count_token_input"]} tokens). "
-                   f"Output cost: {output["cost_token_output"]:.3f}$ (rounded) ({output["count_token_output"]} tokens). "
-                   f"Total cost: {output["total_cost"]:.3f}$ (rounded). (rounded) "
-                   "Please note that these costs are estimates and may vary depending on the actual response from OpenAi API.")
-
-        if not output_text:
-            rapport += (" Warning: No output example provided. "
-                        "The actual cost could be higher due to the output tokens not included in this estimate.\n")
-        print(rapport)
+        if info_text:
+            rapport = (f"Input cost: {output["cost_token_input"]:.3f}$ (rounded) ({output["count_token_input"]} tokens). "
+                       f"Output cost: {output["cost_token_output"]:.3f}$ (rounded) ({output["count_token_output"]} tokens). "
+                       f"Total cost: {output["total_cost"]:.3f}$ (rounded). (rounded) "
+                       "Please note that these costs are estimates and may vary depending on the actual response from OpenAi API.")
+    
+            if not output_text:
+                rapport += (" Warning: No output example provided. "
+                            "The actual cost could be higher due to the output tokens not included in this estimate.\n")
+            print(rapport)
         return output
