@@ -80,9 +80,9 @@ class Calculator:
         output["total_cost"] = output["cost_token_input"] + output["cost_token_output"]
 
         if info_text:
-            rapport = (f"Input cost: {output["cost_token_input"]:.3f}$ (rounded) ({output["count_token_input"]} tokens). "
-                       f"Output cost: {output["cost_token_output"]:.3f}$ (rounded) ({output["count_token_output"]} tokens). "
-                       f"Total cost: {output["total_cost"]:.3f}$ (rounded). (rounded) "
+            rapport = (f"Input cost: {output['cost_token_input']:.3f}$ (rounded) ({output['count_token_input']} tokens). "
+                       f"Output cost: {output['cost_token_output']:.3f}$ (rounded) ({output['count_token_output']} tokens). "
+                       f"Total cost: {output['total_cost']:.3f}$ (rounded)."
                        "Please note that these costs are estimates and may vary depending on the actual response from OpenAi API.")
     
             if not output_text:
