@@ -13,11 +13,11 @@ You do NOT need an OpenAI API key to use this package.
 
 As of the current release, the package supports the following ChatGPT models:
 
-- `gpt-4`: Input Price - \$0.03, Output Price - $0.06 per 1000 tokens.
-- `gpt-4-32k`: Input Price - $0.06, Output Price - $0.12 per 1000 tokens.
-- `gpt-4-1106-preview`: Input Price - $0.01, Output Price - $0.03 per 1000 tokens.
-- `gpt-3.5-turbo-1106`: Input Price - $0.001, Output Price - $0.002 per 1000 tokens.
-- `gpt-3.5-turbo-instruct`: Input Price - $0.0015, Output Price - $0.002 per 1000 tokens.
+- `gpt-4`: Input Price - \$0.03, Output Price - \$0.06 per 1000 tokens.
+- `gpt-4-32k`: Input Price - \$0.06, Output Price - \$0.12 per 1000 tokens.
+- `gpt-4-1106-preview`: Input Price - \$0.01, Output Price - \$0.03 per 1000 tokens.
+- `gpt-3.5-turbo-1106`: Input Price - \$0.001, Output Price - \$0.002 per 1000 tokens.
+- `gpt-3.5-turbo-instruct`: Input Price - \$0.0015, Output Price - \$0.002 per 1000 tokens.
 
 ## Installation
 
