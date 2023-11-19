@@ -13,7 +13,7 @@ You do NOT need an OpenAI API key to use this package.
 
 As of the current release, the package supports the following ChatGPT models:
 
-- `gpt-4`: Input Price - $0.03, Output Price - $0.06 per 1000 tokens.
+- `gpt-4`: Input Price - \$0.03, Output Price - $0.06 per 1000 tokens.
 - `gpt-4-32k`: Input Price - $0.06, Output Price - $0.12 per 1000 tokens.
 - `gpt-4-1106-preview`: Input Price - $0.01, Output Price - $0.03 per 1000 tokens.
 - `gpt-3.5-turbo-1106`: Input Price - $0.001, Output Price - $0.002 per 1000 tokens.
@@ -38,8 +38,7 @@ from GPTCostCalculator import Calculator
 calculator = Calculator()
 
 # Estimate the cost
-report = estimator.cost_estimate(model="gpt-4", input_text="Your input text here", output_text="Expected output text")
-print(report)
+report = estimator.cost_estimate(model="gpt-4", input_text="Your input text here", output_text="Expected output text", info_text = True)
 ```
 
 `output_text` is not mandatory.
@@ -58,7 +57,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Contact
 
-For any queries or feedback, please contact [Your Email](mailto:amato.gregoire@gmail.com).
+For any queries or feedback, please contact [me](mailto:amato.gregoire@gmail.com).
 
 ## Disclaimer
 
