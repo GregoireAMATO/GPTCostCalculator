@@ -2,6 +2,7 @@
 
 This Python package, `GPTCostCalculator`, provides a simple yet effective tool for estimating the cost of using different ChatGPT models. It is designed for anyone using ChatGPT models in their applications and need to estimate the cost of a particular query.
 You do NOT need an OpenAI API key to use this package.
+This package is available on [pypi](https://pypi.org/project/GPTCostCalculator/)
 
 ## Features
 
