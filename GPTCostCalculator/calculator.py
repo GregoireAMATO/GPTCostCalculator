@@ -14,11 +14,9 @@ class Calculator:
         Initializes the Calculator with supported models and their respective pricing.
         """
         self.models = {
-            "gpt-4": {"input_price": 0.03, "output_price": 0.06},
-            "gpt-4-32k": {"input_price": 0.06, "output_price": 0.12},
-            "gpt-4-1106-preview": {"input_price": 0.01, "output_price": 0.03},
-            "gpt-3.5-turbo-1106": {"input_price": 0.001, "output_price": 0.002},
-            "gpt-3.5-turbo-instruct": {"input_price": 0.0015, "output_price": 0.002}
+            "gpt-4o": {"input_price": 5, "output_price": 15},
+            "gpt-3.5-turbo-0125": {"input_price": 0.5, "output_price": 1.5},
+            "gpt-3.5-turbo-instruct": {"input_price": 1.5, "output_price": 2}
         }
         self.tokenizers = {}
         self.max_cached_tokenizers = max_cached_tokenizers
@@ -75,8 +73,8 @@ class Calculator:
         output["count_token_input"] = len(tokenizer.encode(input_text))
         output["count_token_output"] = len(tokenizer.encode(output_text))
 
-        output["cost_token_input"] = output["count_token_input"] / 1000 * self.models[model]["input_price"]
-        output["cost_token_output"] = output["count_token_output"] / 1000 * self.models[model]["output_price"]
+        output["cost_token_input"] = output["count_token_input"] / 1000000 * self.models[model]["input_price"]
+        output["cost_token_output"] = output["count_token_output"] / 1000000 * self.models[model]["output_price"]
         output["total_cost"] = output["cost_token_input"] + output["cost_token_output"]
 
         if info_text:

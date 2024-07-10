@@ -14,11 +14,9 @@ This package is available on [pypi](https://pypi.org/project/GPTCostCalculator/)
 
 As of the current release, the package supports the following ChatGPT models:
 
-- `gpt-4`: Input Price - \$0.03, Output Price - \$0.06 per 1000 tokens.
-- `gpt-4-32k`: Input Price - \$0.06, Output Price - \$0.12 per 1000 tokens.
-- `gpt-4-1106-preview`: Input Price - \$0.01, Output Price - \$0.03 per 1000 tokens.
-- `gpt-3.5-turbo-1106`: Input Price - \$0.001, Output Price - \$0.002 per 1000 tokens.
-- `gpt-3.5-turbo-instruct`: Input Price - \$0.0015, Output Price - \$0.002 per 1000 tokens.
+- `gpt-4o`: Input Price - $5, Output Price - $15 per 1M tokens.
+- `gpt-3.5-turbo-0125`: Input Price - $0.5, Output Price - $1.5 per 1M tokens.
+- `gpt-3.5-turbo-instruct`: Input Price - $1.5, Output Price - $2 per 1M tokens.
 
 ## Installation
 
@@ -39,7 +37,7 @@ from GPTCostCalculator import Calculator
 calculator = Calculator()
 
 # Estimate the cost
-report = estimator.cost_estimate(model="gpt-4", input_text="Your input text here", output_text="Expected output text", info_text = True)
+report = estimator.cost_estimate(model="gpt-4o", input_text="Your input text here", output_text="Expected output text", info_text = True)
 ```
 
 `output_text` is not mandatory.
